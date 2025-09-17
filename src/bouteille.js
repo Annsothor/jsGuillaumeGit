@@ -1,13 +1,13 @@
 class Habitation {
    //Constructeur
-   constructor(nom_maison, largeur_maison, longueur_maison, nombre_etage) {
-      this.nom = nom_maison;
-      this.largeur = largeur_maison;
-      this.longueur = longueur_maison;
-      this.nbrEtage = nombre_etage;
-   }
+constructor(nom_maison, largeur_maison, longueur_maison, nombre_etage) {
+    this.nom = nom_maison;
+    this.largeur = largeur_maison;
+    this.longueur = longueur_maison;
+    this.nbrEtage = nombre_etage;
+}
    //Méthode
-   superficie() {
+superficie() {
     if(this.nbrEtage > 0){
       return this.largeur * this.longueur * this.nbrEtage;
     } else if(this.nbrEtage == 0) {
@@ -15,7 +15,7 @@ class Habitation {
     } else{
         console.log(`Une maison avec ${this.nbrEtage} étages.... pour de vrai??`)
     }
-   }
+}
 }
 
 const chateau = new Habitation("Chateau", 50, 30, 4);
