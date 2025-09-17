@@ -22,7 +22,7 @@ const chateau = new Habitation("Chateau", 50, 30, 4);
 const hobbitHome = new Habitation("Hobbit House", 2, 3, 0);
 const himmeuble = new Habitation("Himmeuble", 20, 20, 12);
 
-console.log("L'habitation: "+ chateau.nom + "à + une superficie de: " + chateau.superficie() + "m2");
-console.log("L'habitation: "+ hobbitHome.nom + "à + une superficie de: " + hobbitHome.superficie() + "m2");
-console.log("L'habitation: "+ himmeuble.nom + "à + une superficie de: " + himmeuble.superficie() + "m2");
+console.log("L'habitation: " + chateau.nom + "à une superficie de: " + chateau.superficie() + "m2");
+console.log("L'habitation: " + hobbitHome.nom + "à une superficie de: " + hobbitHome.superficie() + "m2");
+console.log("L'habitation: " + himmeuble.nom + "à une superficie de: " + himmeuble.superficie() + "m2");
 
