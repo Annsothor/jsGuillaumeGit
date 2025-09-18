@@ -1,2 +1,2 @@
-import './style.css'
-import './test_vehicule.js';
+import './style.css';
+import './test_imc.js';
