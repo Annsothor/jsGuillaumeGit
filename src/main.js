@@ -1,1 +1,2 @@
-import "./bouteille.js"
+import './style.css';
+import './ex06.js';
