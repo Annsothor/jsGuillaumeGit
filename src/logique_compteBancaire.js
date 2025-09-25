@@ -1,5 +1,6 @@
 import CompteBancaire from "./compteBancaire.js";
 import * as tools from './tools.js';
+import DOMPurify from 'dompurify';
 
 //Récupération des élèments du DOM
 const nomCompte = document.querySelector('#id_nom');
@@ -21,24 +22,29 @@ const btSolde = document.querySelector('#id_solde');
 
 //Tableau de comptes bancaires
 const comptes = [];
+// boucle sanitize
+
 
 //1 Créer un compte (CompteBancaire)
 
 //écouteur événement sur le bouton créer un compte
 btCreate.addEventListener('click', () => {
+
+    const nomcompte_sanitize = DOMPurify.sanitize(nomCompte.value);
+
     try {
         //test si le champs id_nom est remplis
-        if (nomCompte.value === "") {
+        if (nomcompte_sanitize === "") {
             throw new Error(`Le champ nom est vide veuillez le remplir`);
         }
         //test si le compte existe déja
-        if (tools.isCompteBancaireExist(comptes, nomCompte.value)) {
-            throw new Error(`Le compte ${nomCompte.value} existe déja`);
+        if (tools.isCompteBancaireExist(comptes, nomcompte_sanitize)) {
+            throw new Error(`Le compte ${nomcompte_sanitize} existe déja`);
         }
         //Ajout du compte bancaire au tableau (comptes)
-        comptes.push(new CompteBancaire(nomCompte.value));
+        comptes.push(new CompteBancaire(nomcompte_sanitize));
         //Afficher le message
-        message.innerText = `Le compte ${nomCompte.value} a été ajouté`;
+        message.innerText = `Le compte ${nomcompte_sanitize} a été ajouté`;
         tools.messageColorValid(message);
     } catch (error) {
         message.innerText = error.message;
